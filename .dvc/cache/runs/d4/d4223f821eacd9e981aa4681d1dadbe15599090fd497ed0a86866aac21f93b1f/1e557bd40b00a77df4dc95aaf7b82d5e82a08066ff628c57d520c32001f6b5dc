@@ -1,0 +1,16 @@
+cmd: python src/data_processing.py
+deps:
+- path: config/paths_config.py
+  hash: md5
+  md5: 5c9020bda0da3cad7ab525b10ba746ff
+  size: 743
+- path: src/data_processing.py
+  hash: md5
+  md5: a0e9d5f19a4b5e8146dd840e92c8546e
+  size: 2506
+outs:
+- path: artifacts/processed_data
+  hash: md5
+  md5: c8757e65519f6f0e184b70975baab199.dir
+  size: 11184528
+  nfiles: 1

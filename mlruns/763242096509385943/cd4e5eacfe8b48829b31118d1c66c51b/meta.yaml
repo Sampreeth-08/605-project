@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/user/OneDrive/Documents/UMD/Spring25/605/Project/mlruns/763242096509385943/cd4e5eacfe8b48829b31118d1c66c51b/artifacts
+end_time: 1746469875895
+entry_point_name: ''
+experiment_id: '763242096509385943'
+lifecycle_stage: active
+run_id: cd4e5eacfe8b48829b31118d1c66c51b
+run_name: redolent-hog-355
+run_uuid: cd4e5eacfe8b48829b31118d1c66c51b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746469786671
+status: 3
+tags: []
+user_id: Sampreeth

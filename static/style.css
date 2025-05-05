@@ -1,0 +1,95 @@
+/* General Body Setup */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc; /* Light Grey Background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333; /* Dark Grey Text */
+}
+
+/* Form Container */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: #ffffff; /* White Background */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #6A1B9A; /* Purple Accent */
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Inputs and Selects */
+input, select {
+    padding: 12px 18px;
+    margin-bottom: 18px;
+    border: 2px solid #D1C4E9; /* Light Purple Border */
+    border-radius: 8px;
+    background-color: #F3E5F5; /* Light Purple Background */
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #6A1B9A; /* Purple Accent on Focus */
+    background-color: #E1BEE7; /* Slightly Darker Purple on Focus */
+}
+
+/* Submit Button */
+button {
+    background-color: #6A1B9A; /* Purple Accent */
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #8E24AA; /* Slightly Lighter Purple on Hover */
+}
+
+/* Prediction Box */
+.prediction-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #6A1B9A; /* Purple Background */
+    color: #ffffff; /* White Text */
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
