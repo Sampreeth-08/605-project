@@ -51,5 +51,23 @@ pipeline {
                 }
             }
         }
+
+        stage('Building Docker Image') {
+            steps {
+                script {
+                    echo 'Building Docker Image...'
+                    docker.build("605")
+                }
+            }
+        }
+
+        stage('Scanning Docker Image') {
+            steps {
+                script {
+                    echo 'Scanning Docker Image...'
+                    sh "trivy image 605:latest --format table -o trivy-image-scan-report.html"
+                }
+            }
+        }
     }
 }
