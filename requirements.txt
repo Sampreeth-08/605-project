@@ -3,7 +3,6 @@ pandas
 setuptools
 scikit-learn
 lightgbm
-xgboost
 matplotlib
 mlflow
 flask
