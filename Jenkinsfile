@@ -88,7 +88,7 @@ pipeline {
             steps {
                 script {
                     echo 'AWS Deployment...'
-                    sh "aws ecs update-service --cluster 605-project-ecs --service 605_ecs_task-service --force-new-deployment --region us-east-1"
+                    sh "aws ecs update-service --cluster 605-project-ecs --service 605_ecs_task-service --force-new-deployment"
                 }
             }
         }
