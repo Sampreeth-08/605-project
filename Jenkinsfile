@@ -84,13 +84,33 @@ pipeline {
             }
         }
 
+        // stage('AWS Deployment') {
+        //     steps {
+        //         script {
+        //             echo 'AWS Deployment...'
+        //             sh "aws ecs update-service --cluster 605-project-ecs --service 605_ecs_task-service --force-new-deployment"
+        //         }
+        //     }
+        // }
+
         stage('AWS Deployment') {
-            steps {
-                script {
-                    echo 'AWS Deployment...'
-                    sh "aws ecs update-service --cluster 605-project-ecs --service 605_ecs_task-service --force-new-deployment"
-                }
+    environment {
+        AWS_DEFAULT_REGION = 'us-east-1' // or your region
+    }
+
+
+    steps {
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: '605-aws-cred']]) {
+            script {
+                echo 'AWS Deployment........'
+                sh '''
+                    aws ecs update-service --cluster 605-project-ecs --service 605_ecs_task-service --force-new-deployment
+                '''
             }
         }
+    }
+}
+
+
     }
 }
