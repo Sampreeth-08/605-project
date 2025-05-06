@@ -2,6 +2,9 @@ pipeline {
     agent any
     environment {
         VENV_DIR = '605venv'
+        DOCKERHUB_CREDENTIAL_ID = '605-dockerhub'
+        DOCKERHUB_REGISTRY = 'https://registry.hub.docker.com'
+        DOCKERHUB_REPOSITORY = 'sampreeth08/605-mlops-app'
     }
     
     stages {
@@ -56,7 +59,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker Image...'
-                    docker.build("605")
+                    dockerImage = docker.build("${DOCKERHUB_REPOSITORY}:latest")
                 }
             }
         }
@@ -65,7 +68,18 @@ pipeline {
             steps {
                 script {
                     echo 'Scanning Docker Image...'
-                    sh "trivy image 605:latest --format table -o trivy-image-scan-report.html"
+                    sh "trivy image ${DOCKERHUB_REPOSITORY}:latest --format table -o trivy-image-scan-report.html"
+                }
+            }
+        }
+
+        stage('Pushing Docker Image') {
+            steps {
+                script {
+                    echo 'Pushing Docker Image...'
+                    docker.withRegistry("${DOCKERHUB_REGISTRY}", "${DOCKERHUB_CREDENTIAL_ID}") {
+                        dockerImage.push("latest")
+                    }
                 }
             }
         }
